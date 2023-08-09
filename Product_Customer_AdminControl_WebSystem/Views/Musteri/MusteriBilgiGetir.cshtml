@@ -1,0 +1,23 @@
+﻿@model _50DERSTEMVC.Models.Entity.TBL_MUSTERILER
+@{
+    ViewBag.Title = "MusteriBilgiGetir";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@using (Html.BeginForm("Guncelle", "Musteri", FormMethod.Post))
+{
+    <div>
+        @Html.LabelFor(x=>x.MUSTERIID)
+        @Html.TextBoxFor(x=>x.MUSTERIID,new { @class="form-control"})
+        <br />
+        @Html.LabelFor(x=>x.MUSTERIAD)
+        @Html.TextBoxFor(x => x.MUSTERIAD, new { @class="form-control"})
+        <br />
+        @Html.LabelFor(x=>x.MUSTERISOYAD)
+        @Html.TextBoxFor(x => x.MUSTERISOYAD, new { @class="form-control"})
+        <br />
+        <button class="btn btn-info">GÜNCELLE</button>
+
+    </div>
+}
+

@@ -1,0 +1,37 @@
+﻿@model _50DERSTEMVC.Models.Entity.TBL_URUNLER
+@{
+    ViewBag.Title = "YeniUrun";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div>
+        <label>ÜRÜN ADI</label>
+        <input type="text" class="form-control" name="URUNAD" required="" placeholder="Buraya Ürün Adını Yazın !"/>
+    </div>
+
+    <div>
+        <label>MARKA</label>
+        <input type="text" class="form-control" name="MARKA" required="" placeholder="Buraya Markayı Yazın !"/>
+    </div>
+
+    <div>
+        <label>KATEGORİ</label>
+       @Html.DropDownListFor(m=>m.TBL_KATEGORILER.KATEGORIID,(List<SelectListItem>)ViewBag.dgr,new { @class = "form-control" })
+    </div>
+
+    <div>
+        <label>FIYAT</label>
+        <input type="text" class="form-control" name="FIYAT" />
+    </div>
+    
+    <div>
+        <label>STOK</label>
+        <input type="text" class="form-control" name="STOK" />
+    </div>
+
+    <div style="margin-top:15px">
+        <button class="btn btn-info">EKLE</button>
+    </div>
+</form>
+
